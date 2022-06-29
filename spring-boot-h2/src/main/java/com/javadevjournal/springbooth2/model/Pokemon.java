@@ -29,35 +29,34 @@ public class Pokemon {
     Integer id;
     String name;
 
-    // @OneToMany(mappedBy = "POKEMON", fetch = FetchType.EAGER)
-	// @JsonManagedReference
-	// private List<Pokemon> types = new ArrayList<>();
+    @OneToMany(mappedBy = "pokemon", fetch = FetchType.EAGER)
+	@JsonManagedReference
+	List<Type> identity = new ArrayList<>();
 
-    // @OneToMany(mappedBy = "pokemon", fetch = FetchType.EAGER)
-	// @JsonManagedReference
-	// private List<Sprite> party = new ArrayList<>();
+    // Sprite sprite;
 
     public Integer getId() {
         return id;
     }
-    public void setId(Integer id) {
-        this.id = id;
-    }
+
     public String getName() {
         return name;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
-    // public List<String> getTypes() {
-    //     return types;
-    // }
-    // public void setTypes(List<String> types) {
-    //     this.types = types;
-    // }
+
+
     // public Sprite getSprite() {
     //     return sprite;
     // }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
     // public void setSprite(Sprite sprite) {
     //     this.sprite = sprite;
     // }
